@@ -17,6 +17,7 @@ module.exports = {
 		return new Promise((resolve, reject) => {
 			uni.request({
 				url: fullUrl,
+				data,
 				method: methodType,
 				data,
 				// header: {
@@ -25,11 +26,13 @@ module.exports = {
 				// },
 				success: (res) => {
 					console.log(res, 'success');
-					if (res.code == 200) {
+					if (res.data.code === 200) {
+						resolve(res.data)
+					}else if(res.data.code === 803){
 						resolve(res.data)
 					} else {
 						uni.showToast({
-							title: res.data,
+							title: '请求异常',
 							icon: 'none'
 						})
 						reject(res.data)

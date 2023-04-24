@@ -26,14 +26,27 @@
 </template>
 
 <script>
+	import {
+		getUserDetail
+	} from '@/utils/api.js'
 	export default {
 		data() {
 			return {
-
+				uid: uni.getStorageSync('user').id
 			}
 		},
+		onLoad() {
+			this.getuserInfo()
+		},
 		methods: {
-
+			getuserInfo() {
+				let data = {
+					uid: this.uid
+				}
+				getUserDetail(data).then(res => {
+					console.log(res, 'res');
+				})
+			}
 		}
 	}
 </script>

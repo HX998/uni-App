@@ -3,7 +3,7 @@
 		<view class="img">
 			<image class="image" src="../../static/Login.png" mode=""></image>
 		</view>
-		<form class="_form">
+		<!-- <form class="_form">
 			<view class="cu-form-group margin-top">
 				<view class="title">手机号</view>
 				<input placeholder="请输入手机号" name="input" v-model="form.phone"></input>
@@ -15,17 +15,20 @@
 				<text class="text-gray cuIcon-roundclosefill" v-if="form.captcha" @click="form.captcha = ''"></text>
 				<button class='cu-btn bg-green shadow' @click="getcode">验证码</button>
 			</view>
-		</form>
-		<view class="btn">
-			<button class="button cu-btn bg-red round lg" @click="Login">登录</button>
+		</form> -->
+		<view class="QRcode">
+			<image class="QR_image" :src="imgUrl" mode="" @click="getKeyCode"></image>
 		</view>
+		<button class="button cu-btn bg-red round lg" @click="Check">登录</button>
 	</view>
 </template>
 
 <script>
 	import {
-		getSentcode,
-		getVerifycode
+		getKey,
+		getCreate,
+		getCheck,
+		getAccount
 	} from '@/utils/api.js'
 
 	export default {
@@ -36,48 +39,46 @@
 					// password: 'zxcv1234'
 					captcha: ''
 				},
+				imgUrl: '',
+				key: ''
 			}
 		},
+		onLoad() {
+			this.getKeyCode()
+		},
 		methods: {
-			getcode(val) {
-				if (val) {
+			getKeyCode() {
+				getKey({
+					time: Date.parse(new Date())
+				}).then(res => {
+					console.log(res, 'res');
+					this.key = res.data.unikey
 					let data = {
-						phone: this.form.phone
+						key: this.key,
+						qrimg: true
 					}
-					getSentcode(data).then((res) => {
-						console.log(res, 'asdasdasd');
-						uni.showToast({
-							title: '获取成功，验证码只有2分钟之内有效',
-							duration: 1000,
-							icon: "none"
-						})
-					}).catch(err => {
-						uni.showToast({
-							title: '获取失败' + err.data,
-							duration: 1000,
-							icon: "none"
-						})
+					getCreate(data).then(it => {
+						console.log(it, 'ititit');
+						this.imgUrl = it.data.qrimg
 					})
-				}
+				})
 			},
-			Login() {
-				// getVerifycode(this.form).then((res) => {
-				// 	uni.showToast({
-				// 		title: '验证成功',
-				// 		duration: 1000,
-				// 		icon: "none"
-				// 	})
-				uni.switchTab({
-					url: '/pages/find/find'
-				});
-				// }).catch(err => {
-				// 	uni.showToast({
-				// 		title: '验证失败' + err.data,
-				// 		duration: 1000,
-				// 		icon: "none"
-				// 	})
-				// 	console.log(err, 'error')
-				// })
+			Check() {
+				getCheck({
+					key: this.key
+				}).then(res => {
+					console.log(res, '验证二维码');
+					uni.setStorageSync('cookies', res.cookies)
+					this.getAccount()
+				})
+			},
+			getAccount() {
+				getAccount().then(it => {
+					uni.setStorageSync('user', it.account)
+					uni.switchTab({
+						url: '/pages/my/my'
+					})
+				})
 			}
 		}
 	}
@@ -109,7 +110,26 @@
 		text-align: center;
 	}
 
+	.QRcode {
+		text-align: center;
+	}
+
+	.QR_image {
+		position: absolute;
+		top: 55%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 500upx;
+		height: 500upx;
+		/* width: 70%;
+		height: auto; */
+	}
+
 	.button {
+		position: absolute;
+		top: 78%;
+		left: 50%;
+		transform: translateX(-50%);
 		width: 80%;
 		margin: 48upx auto;
 	}
