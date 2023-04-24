@@ -25,6 +25,7 @@
 			"path": "pages/my/my",
 			"style": {
 				"navigationBarTitleText": "我的",
+				// "navigationBarBackgroundColor": "#f1f1f1",
 				"enablePullDownRefresh": false
 			}
 
@@ -54,8 +55,9 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
+		"transparentTitle": "always",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#E0E2E0"
 	},
 	"uniIdRouter": {},
 	"easycom": {
