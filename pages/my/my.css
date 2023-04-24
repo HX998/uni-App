@@ -1,0 +1,86 @@
+.main {
+	padding: 24upx;
+}
+
+.nav {
+	height: 40upx;
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav_img {
+	width: 36upx;
+	height: 36upx;
+}
+
+.nav_more {
+	position: relative;
+}
+
+.more_num {
+	position: absolute;
+	left: 60upx;
+}
+
+.container {
+	margin-top: 100upx;
+}
+
+.con_card {
+	background-color: #fff;
+	margin: 36upx 0;
+	border-radius: 20upx;
+	box-shadow: 0 0 30upx #d5d5d5;
+}
+
+.con_hand {
+	text-align: center;
+	position: relative;
+	height: 200upx;
+	margin-top: 30upx;
+}
+
+.sculpture {
+	position: absolute;
+	width: 120upx;
+	height: 120upx;
+	border-radius: 50%;
+	left: 50%;
+	transform: translateX(-50%);
+	top: -60upx
+}
+
+.con_title {
+	padding-top: 70upx;
+}
+
+.con_info {
+	padding: 20upx;
+}
+
+.con_info_item {
+	margin: 10upx;
+	color: #7c7c7c;
+}
+
+.septal_line {
+	position: relative;
+	top: -5upx;
+	color: #d8d8d8;
+}
+
+.cu-item {
+	border: none
+}
+
+.card_down {
+	padding: 20upx;
+	text-align: center;
+	border-top: 1upx solid #f3f3f3;
+}
+.music_app{
+	overflow: hidden;
+}
+.cu-list {
+	border: none;
+}
