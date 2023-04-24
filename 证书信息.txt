@@ -1,0 +1,29 @@
+密钥库类型： JKS
+密钥库提供方： SUN
+您的密钥库包含 1 个条目
+别名： __uni__fb4347a
+创建日期： Apr 21, 2023
+条目类型： PrivateKeyEntry
+证书密码：huvo5KZf
+证书链长度： 1
+证书[1]：
+所有者： CN=0OavH%2F%2B9Cyx14yRjSjUnrYhX0O9OyLb8u%2F7RFN4xcJkiMUlJ2G6eOvnPFAiZUbNC8Q2HpDQVAs2XJjOVsBAoTg%3D%3D, OU=Android, O=Android, L=, ST=, C=CN
+发布者： CN=0OavH%2F%2B9Cyx14yRjSjUnrYhX0O9OyLb8u%2F7RFN4xcJkiMUlJ2G6eOvnPFAiZUbNC8Q2HpDQVAs2XJjOVsBAoTg%3D%3D, OU=Android, O=Android, L=, ST=, C=CN
+序列号： 4127dcf9
+生效时间： Fri Apr 21 12:30:10 CST 2023 失效时间： Sun Mar 28 12:30:10 CST 2123
+证书指纹：
+MD5: F8:F1:C8:76:0A:23:56:37:36:7C:06:1D:8C:A1:4C:DB
+SHA1: 23:48:98:8D:6D:31:13:B6:A3:21:BE:AE:50:6A:9B:68:BE:B2:EA:0F
+SHA256: FE:6E:38:00:C6:56:7A:0E:3B:68:ED:A7:B2:35:40:B9:E8:1B:A5:BD:C6:97:D2:CF:27:01:32:8B:E1:B5:91:FB
+签名算法名称： SHA256withRSA
+版本： 3
+扩展：
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 08 36 50 6D 28 A5 AD A7 7D D2 8C 6A 20 61 C5 83 .6Pm(......j a..
+0010: 58 43 B5 1C XC..
+]
+]
+*******************************************
+*******************************************

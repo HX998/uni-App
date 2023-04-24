@@ -42,6 +42,13 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/broadcast/broadcast",
+			"style": {
+				"navigationBarTitleText": "直播",
+				"enablePullDownRefresh": false
+			}
+
 		}
 	],
 	"globalStyle": {
@@ -59,7 +66,7 @@
 	},
 	"tabBar": {
 		"color": "#7A7E83",
-		"selectedColor": "#3cc51f",
+		"selectedColor": "red",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"height": "50px",
@@ -68,19 +75,6 @@
 		"spacing": "3px",
 		"iconfontSrc": "static/iconfont.ttf", // app tabbar 字体.ttf文件路径 app 3.4.4+
 		"list": [ // tabBar
-			// {
-			// 	"pagePath": "pages/component/index",
-			// 	"iconPath": "static/image/icon_component.png",
-			// 	"selectedIconPath": "static/image/icon_component_HL.png",
-			// 	"text": "组件",
-			// 	"iconfont": { // 优先级高于 iconPath，该属性依赖 tabbar 根节点的 iconfontSrc
-			// 		"text": "\ue102",
-			// 		"selectedText": "\ue103",
-			// 		"fontSize": "17px",
-			// 		"color": "#000000",
-			// 		"selectedColor": "#0000ff"
-			// 	}
-			// }, 
 			{
 				"pagePath": "pages/find/find",
 				// "iconPath": "static/image/icon_API.png",
@@ -102,10 +96,10 @@
 				// "selectedIconPath": "static/image/icon_API_HL.png",
 				"text": "关注"
 			}, {
-				"pagePath": "pages/yuncun/yuncun",
+				"pagePath": "pages/broadcast/broadcast",
 				// "iconPath": "static/image/icon_API.png",
 				// "selectedIconPath": "static/image/icon_API_HL.png",
-				"text": "云村"
+				"text": "直播"
 			}
 		],
 		"midButton": {
