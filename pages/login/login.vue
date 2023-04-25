@@ -64,21 +64,21 @@
 				})
 			},
 			Check() {
-				getCheck({
-					key: this.key
-				}).then(res => {
-					console.log(res, '验证二维码');
-					uni.setStorageSync('cookies', res.cookies)
-					this.getAccount()
-				})
+				// getCheck({
+				// 	key: this.key
+				// }).then(res => {
+				// 	console.log(res, '验证二维码');
+				// uni.setStorageSync('cookies', res.cookies)
+				this.getAccount()
+				// })
 			},
 			getAccount() {
-				getAccount().then(it => {
-					uni.setStorageSync('user', it.account)
-					uni.switchTab({
-						url: '/pages/my/my'
-					})
+				// getAccount().then(it => {
+				// 	uni.setStorageSync('user', it.account)
+				uni.switchTab({
+					url: '/pages/my/my'
 				})
+				// })
 			}
 		}
 	}

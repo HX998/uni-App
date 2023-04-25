@@ -1,7 +1,7 @@
 <template>
 	<view class="main">
 		<view class="nav">
-			<image class="nav_img nav_more" src="../../static/more.png" mode="" />
+			<image class="nav_img nav_more" src="../../static/more.png" mode="" @tap="open" />
 			<van-icon class="more_num" info="9" />
 			<image class="nav_img" src="../../static/search.png" mode="" @click="searcher" />
 		</view>
@@ -9,7 +9,7 @@
 			<view class="con_card con_hand">
 				<image class="sculpture" src="/static/logo.png" mode=""></image>
 				<view class="con_title">
-					<text>@听闻余生@</text>
+					<text>$ 听闻余生 $</text>
 				</view>
 				<view class="con_info">
 					<text class="con_info_item">1 关注</text>
@@ -62,6 +62,7 @@
 				暂无歌单
 			</view>
 		</view>
+		<SetPopup ref="SetPopup" @children="children" />
 	</view>
 </template>
 
@@ -69,6 +70,8 @@
 	import {
 		getUserDetail
 	} from '@/utils/api.js'
+	import SetPopup from "@/components/SetPopup.vue"
+
 	export default {
 		data() {
 			return {
@@ -111,10 +114,19 @@
 				tab_type: 0
 			}
 		},
+		components: {
+			SetPopup
+		},
 		onLoad() {
-			this.getuserInfo()
+			// this.getuserInfo()
 		},
 		methods: {
+			open() {
+				this.$refs.SetPopup.open()
+			},
+			children(e) {
+				console.log('千位', e);
+			},
 			searcher() {
 				uni.navigateTo({
 					url: '/pages/search/search'
