@@ -31,4 +31,38 @@ module.exports = {
 		/** 获取用户详情 */
 		return request('/user/detail', 'GET', data);
 	},
+	getBanner() {
+		/** 获取轮播图详情 */
+		return request('/banner', 'GET', {
+			type: '2'
+		});
+	},
+	getHotList(data) {
+		/** 获取热搜榜详情 */
+		return request('/search/hot/detail', 'GET', data);
+	},
+	getProgramHours() {
+		/** 获取 日节目榜详情 */
+		return request('/dj/program/toplist/hours', 'GET', {
+			limit: 20
+		});
+	},
+	getToplistHours() {
+		/** 获取 日主播榜详情 */
+		return request('/dj/toplist/hours', 'GET', {
+			limit: 20
+		});
+	},
+	getNewcomerHours() {
+		/** 获取 日新人榜详情 */
+		return request('/dj/toplist/newcomer', 'GET', {
+			limit: 20
+		});
+	},
+	getArtist() {
+		/** 获取华语歌手榜详情 */
+		return request('/toplist/artist', 'GET', {
+			type: '1'
+		});
+	},
 }

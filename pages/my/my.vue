@@ -30,11 +30,10 @@
 					<text><i class="lg text-gray cuIcon-add"></i>音乐应用</text>
 				</view>
 			</view>
-			<view class="con_card"></view>
 		</view>
 		<scroll-view scroll-x class="bg-white nav text-center" style="height: 90upx;">
 			<view class="cu-item" v-for="(item,index) in tabs" :key="index" @click="tab_type = index"
-				:class="index===tab_type?'text-blue cur':''">
+				:class="index===tab_type?'text-red cur':''">
 				{{item}}
 			</view>
 		</scroll-view>
