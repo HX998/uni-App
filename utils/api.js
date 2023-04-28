@@ -59,6 +59,17 @@ module.exports = {
 			limit: 20
 		});
 	},
+	getSearch(data) {
+		/** 获取 日新人榜详情 */
+		return request('/search', 'GET', data);
+	},
+	getSearchSuggest(keywords) {
+		/** 获取 日新人榜详情 */
+		return request('/search/suggest', 'GET', {
+			keywords: keywords,
+			type: 'mobile'
+		});
+	},
 	getArtist() {
 		/** 获取华语歌手榜详情 */
 		return request('/toplist/artist', 'GET', {

@@ -25,7 +25,6 @@
 			"path": "pages/my/my",
 			"style": {
 				"navigationBarTitleText": "我的",
-				// "navigationBarBackgroundColor": "#f1f1f1",
 				"enablePullDownRefresh": false
 			}
 
@@ -50,25 +49,23 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/search/search",
+			"style": {
+				"navigationBarTitleText": "搜索",
+				"enablePullDownRefresh": false
+			}
+
 		}
-	    ,{
-            "path" : "pages/search/search",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"transparentTitle": "always",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F9F9",
+		"backgroundColor": "#F8F8F8",
 		"color": "#7A7E83"
-		
+
 	},
 	"uniIdRouter": {},
 	"easycom": {

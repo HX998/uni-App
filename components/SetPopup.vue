@@ -127,6 +127,6 @@
 	.deloag_box {
 		width: 80%;
 		height: 100vh;
-		background-color: #f1f1f1;
+		background-color: #F8F8F8;
 	}
 </style>
